@@ -1,0 +1,38 @@
+table Drug {
+  name: string;
+  init_at: int64;
+  end_at: int64;
+}
+
+table Pathogen {
+    gram_status: uint8;
+    hmbpp_status: uint8;
+    ribo_status: uint8;
+    org_name: string;
+    id_method: string;
+    culture_source: string;
+    organism_type: uint8;
+    report_date: int64;
+    notes: string;
+}
+
+table BiologicalTest {
+    test_date: int64;
+    test: string;
+    result: double;
+    unit: string;
+    ref_range: string;
+    test_category: string;
+}
+
+table Subject {
+    id: uint8;
+    age: int8;
+    date_of_birth: int64;
+    gender: uint8;
+    files: [string];
+    drug_data: [Drug];
+    infection_data: [Pathogen];
+    patient_biology: [BiologicalTest];
+    notes: string;
+}
